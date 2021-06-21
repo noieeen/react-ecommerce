@@ -39,8 +39,14 @@
 
       li{
         list-style-type: none;
+        display: inline-block;
+        margin-right: 15px;
 
-        a{
+        &:last-child{
+            margin-right: 0;
+        }
+
+        a,span{
             font-size: 1.8rem;
             line-height: 1;
             color: black;
