@@ -17,7 +17,7 @@ export const handleUserProfile = async (userAuth, additionalData) => {
   if (!userAuth) return;
 
   const { uid } = userAuth;
-  const userRef = firestore.doc(`user/${uid}`);
+  const userRef = firestore.doc(`users/${uid}`);
   const snapshot = await userRef.get();
 
   if (!snapshot.exists) {
