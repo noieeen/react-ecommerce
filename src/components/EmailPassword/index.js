@@ -83,7 +83,7 @@ class EmailPassword extends Component {
               onChange={this.handleChange}
             />
 
-            <Buttons>Email Password</Buttons>
+            <Buttons>Reset Password</Buttons>
           </form>
         </div>
       </AuthWrapper>
