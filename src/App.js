@@ -4,7 +4,7 @@ import "./default.scss";
 import { connect } from "react-redux";
 
 import { auth, handleUserProfile } from "./firebase/utils";
-import { setCurrentUser } from "./redux/Users/user.action";
+import { setCurrentUser } from "./redux/Users/user.actions";
 
 //Hoc
 import WithAuth from './hoc/withAuth';
