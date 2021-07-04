@@ -1,3 +1,3 @@
-import userAuth from './userAuth'
+import userAuth from "./userAuth";
 
-export default  userAuth
+export { userAuth };

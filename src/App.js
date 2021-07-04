@@ -7,7 +7,7 @@ import { auth, handleUserProfile } from "./firebase/utils";
 import { setCurrentUser } from "./redux/Users/user.action";
 
 //Hoc
-import WithAuth from "./hoc/withAuth";
+import WithAuth from './hoc/withAuth';
 
 //Layout
 import MainLayout from "./layouts/MainLayout";
@@ -113,5 +113,3 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
-
-//https://youtu.be/famf6filtnM?list=PL-Db3tEF6pB8UO2MmccX-5qeGDX9rek7Q&t=3440
