@@ -3,7 +3,7 @@ import "./style.scss";
 import { withRouter } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 
-import { signUpUser } from "../../redux/Users/user.actions";
+import { signUpUser,resetAllAuthForms } from "../../redux/Users/user.actions";
 
 import Button from "../forms/Button";
 import FormInput from "../forms/FormInput";
@@ -26,6 +26,7 @@ const SignUp = (props) => {
   useEffect(() => {
     if (signUpSuccess) {
       resetForm();
+      dispatch(resetAllAuthForms());
       props.history.push("/");
     }
   }, [signUpSuccess]);
