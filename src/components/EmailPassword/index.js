@@ -33,10 +33,6 @@ const EmailPassword = (props) => {
     }
   }, [resetPasswordError]);
 
-  const resetForm = () => {
-    setEmail("");
-    setErrors("");
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();

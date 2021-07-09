@@ -25,27 +25,12 @@ import Dashboard from "./pages/Dashboard";
 const App = (props) => {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    const authListener = auth.onAuthStateChanged(async (userAuth) => {
-      if (userAuth) {
-        const userRef = await handleUserProfile(userAuth);
-        userRef.onSnapshot((snapshot) => {
-          dispatch(
-            setCurrentUser({
-              id: snapshot.id,
-              ...snapshot.data(),
-            })
-          );
-        });
-      }
+  // useEffect(() => {
 
-      dispatch(setCurrentUser(userAuth));
-    });
-
-    return () => {
-      authListener();
-    };
-  }, []);
+  //   return () => {
+  //     authListener();
+  //   };
+  // }, []);
 
   return (
     <div className="App">
