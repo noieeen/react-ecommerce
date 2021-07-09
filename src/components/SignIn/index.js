@@ -37,7 +37,7 @@ const SignIn = (props) => {
   };
 
   const handleGoogleSignIn = () =>{
-    dispatch(signInWithGoogle);
+    dispatch(signInWithGoogle());
   }
 
   const configAuthWrapper = {
