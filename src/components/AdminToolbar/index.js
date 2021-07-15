@@ -25,9 +25,6 @@ const AdminToolbar = props => {
                         My Admin
                     </Link>
                 </li>
-                <li>
-                    <Link to="/product">Product</Link>
-                </li>
             </ul>
         </div>
     )
