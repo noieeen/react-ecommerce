@@ -1,3 +1,4 @@
 import userAuth from "./userAuth";
+import useAdminAuth from "./useAdminAuth";
 
-export { userAuth };
+export { userAuth,useAdminAuth };

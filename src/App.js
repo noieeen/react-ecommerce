@@ -7,12 +7,14 @@ import { checkUserSession } from "./redux/Users/user.actions";
 
 //Hoc
 import WithAuth from "./hoc/withAuth";
+import WithAdminAuth from "./hoc/withAdminAuth";
 
 //Layout
 import MainLayout from "./layouts/MainLayout";
 import HomepageLayout from "./layouts/HomepageLayout";
 
 //Components
+import AdminToolbar from "./components/AdminToolbar"
 
 //Pages
 import Homepage from "./pages/Homepage";
@@ -20,6 +22,7 @@ import Registration from "./pages/Registration";
 import Login from "./pages/Login";
 import Recovery from "./pages/Recovery";
 import Dashboard from "./pages/Dashboard";
+import Admin from "./pages/Admin";
 
 const App = (props) => {
   const dispatch = useDispatch();
@@ -31,6 +34,7 @@ const App = (props) => {
 
   return (
     <div className="App">
+      <AdminToolbar />
       <Switch>
         <Route
           exact
@@ -43,20 +47,20 @@ const App = (props) => {
         />
         <Route
           path="/registration"
-          render={() =>(
-              <MainLayout>
-                <Registration />
-              </MainLayout>
-            )
+          render={() => (
+            <MainLayout>
+              <Registration />
+            </MainLayout>
+          )
           }
         />
         <Route
           path="/login"
-          render={() =>(
-              <MainLayout>
-                <Login />
-              </MainLayout>
-            )
+          render={() => (
+            <MainLayout>
+              <Login />
+            </MainLayout>
+          )
           }
         />
         <Route
@@ -75,6 +79,16 @@ const App = (props) => {
                 <Dashboard />
               </MainLayout>
             </WithAuth>
+          )}
+        />
+        <Route
+          path="/admin"
+          render={() => (
+            <WithAdminAuth>
+              <MainLayout>
+                <Admin />
+              </MainLayout>
+            </WithAdminAuth>
           )}
         />
       </Switch>
