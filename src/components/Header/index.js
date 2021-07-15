@@ -1,12 +1,13 @@
 import React from "react";
-import "./style.scss";
-
-import { useSelector } from "react-redux";
-
 import { Link } from "react-router-dom";
-import { auth } from "../../firebase/utils";
 
+import "./style.scss";
 import Logo from "./../../assets/logo.png";
+
+
+import { useSelector, useDispatch } from "react-redux";
+import { signOutUserStart } from './../../redux/Users/user.actions'
+
 
 const mapState = ({ user }) => ({
   currentUser: user.currentUser,
@@ -14,6 +15,11 @@ const mapState = ({ user }) => ({
 
 const Header = (props) => {
   const { currentUser } = useSelector(mapState);
+  const dispatch = useDispatch();
+
+  const signOut = () => {
+    dispatch(signOutUserStart())
+  }
 
   return (
     <header className="header">
@@ -26,16 +32,16 @@ const Header = (props) => {
         <div className="callToActions">
           {currentUser && (
             <ul>
-                            <li>
+              <li>
                 <Link to="/dashboard">Dashboard</Link>
               </li>
               <li>
-                <span onClick={() => auth.signOut()}>Logout</span>
+                <Link onClick={() => signOut()}>Logout</Link>
               </li>
             </ul>
           )}
 
-          
+
 
           {!currentUser && (
             <ul>

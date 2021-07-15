@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import "./default.scss";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
-import { auth, handleUserProfile } from "./firebase/utils";
-import { setCurrentUser } from "./redux/Users/user.actions";
+import { checkUserSession } from "./redux/Users/user.actions";
 
 //Hoc
 import WithAuth from "./hoc/withAuth";
@@ -25,12 +24,10 @@ import Dashboard from "./pages/Dashboard";
 const App = (props) => {
   const dispatch = useDispatch();
 
-  // useEffect(() => {
+  useEffect(() => {
+    dispatch(checkUserSession());
 
-  //   return () => {
-  //     authListener();
-  //   };
-  // }, []);
+  }, []);
 
   return (
     <div className="App">
