@@ -12,6 +12,8 @@ import WithAdminAuth from "./hoc/withAdminAuth";
 //Layout
 import MainLayout from "./layouts/MainLayout";
 import HomepageLayout from "./layouts/HomepageLayout";
+import DashboardLayout from "./layouts/DashboardLayout";
+import AdminLayout from "./layouts/AdminLayout";
 
 //Components
 import AdminToolbar from "./components/AdminToolbar"
@@ -75,9 +77,9 @@ const App = (props) => {
           path="/dashboard"
           render={() => (
             <WithAuth>
-              <MainLayout>
+              <DashboardLayout>
                 <Dashboard />
-              </MainLayout>
+              </DashboardLayout>
             </WithAuth>
           )}
         />
@@ -85,9 +87,9 @@ const App = (props) => {
           path="/admin"
           render={() => (
             <WithAdminAuth>
-              <MainLayout>
+              <AdminLayout>
                 <Admin />
-              </MainLayout>
+              </AdminLayout>
             </WithAdminAuth>
           )}
         />
