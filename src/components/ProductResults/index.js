@@ -33,22 +33,24 @@ const ProductResults = ({ }) => {
     }
 
     return (
-        <div className="productResults">
-            {products.map((product, index) => {
-                const { productThumbnail, productName, productPrice } = product;
-                if (!productThumbnail || !productName ||
-                    typeof productPrice == 'undefined') return null;
+        <div className="products">
+            <div className="productResults">
+                {products.map((product, index) => {
+                    const { productThumbnail, productName, productPrice } = product;
+                    if (!productThumbnail || !productName ||
+                        typeof productPrice == 'undefined') return null;
 
-                const configProduct = {
-                    productThumbnail,
-                    productName,
-                    productPrice
-                }
+                    const configProduct = {
+                        productThumbnail,
+                        productName,
+                        productPrice
+                    }
 
-                return (
-                    <Product{...configProduct} />
-                )
-            })}
+                    return (
+                        <Product{...configProduct} />
+                    )
+                })}
+            </div>
         </div>
     )
 }
