@@ -6,7 +6,7 @@ import ProductResults from '../../components/ProductResults'
 const Search =({}) =>{
     return(
         <div className="searchPage">
-            <h1>Browse Products</h1>
+            
             <ProductResults/>
         </div>
     )

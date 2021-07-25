@@ -1,12 +1,12 @@
-import React,{useState} from 'react';
+import React from 'react';
 import './style.scss'
 
-const Modal = ({hideModal,toggleModal,children}) => {
+const Modal = ({ hideModal, toggleModal, children }) => {
 
-    if(hideModal) return null;
+    if (hideModal) return null;
 
-    return(
-        <div className="modalOverlay">
+    return (
+        <div className="modalOverlay" onClick={() => toggleModal()}>
             <div className="modal">
                 {children}
             </div>
